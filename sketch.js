@@ -13,5 +13,15 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  homePage();
+}
+
+
+function homePage(){
+  background("lightblue");
+  fill("blue");
+  rect(0, 0, windowWidth, 50 );
+  fill("black");
+  text('Trivia', windowWidth/2,250);
+  textSize (150);
 }
