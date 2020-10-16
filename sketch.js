@@ -6,11 +6,22 @@
 // - describe what you did to take this project "above and beyond"
 
 
-
+//buttons on the homePage
 let button1;
 let button2;
 let button3;
+
 let page = 0;
+//global variable for displaying the options in each question in class Quizquestions
+let displayoption1;
+let displayoption2;
+let displayoption3;
+let displayoption4;
+
+// variable to display new questions
+let Quiz1question1;
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
@@ -71,14 +82,19 @@ function homeButtons(){
 
 function quiz1(){
   page = 1;
-  if(page===1){
+  if(page === 1){
     removeElements(); 
     setup();
     background("lavender");
+    // creating a new questions from the template in class Quizquestions and giving it attributes
+    Quiz1question1 = new Quizquestions("In which galaxy is the Earth located?" , "Pinwheel" , "Markarian" , "Milky Way", "Andromeda" , "Milky Way");
+    Quiz1question1.displayQuestions();
+    Quiz1question1.displayOptions();
+    Quiz1question1.displayAnswer();
   }
 }
 
-class Quiz1questions{
+class Quizquestions{
   constructor(question,option1,option2,option3,option4,rightAnswer){
     this.question = question;
     this.option1 = option1;
@@ -86,65 +102,104 @@ class Quiz1questions{
     this.option3 = option3;
     this.option4 = option4;
     this.rightAnswer = rightAnswer;
+    this.usersAnswer = undefined;
   }
   displayQuestions(){
-    fill("yellow");
+    fill("tan");
     rect(0,0,windowWidth, 300);
     fill("black");
-    text('this.question',300,100);
-    textFont('Verdana');
-    textSize (40);
+    textSize (60);
     textAlign(CENTER);
+    text(this.question , 700, 150);
+    textFont('Verdana');
+    
   }
   displayOptions(){
     //option 1 button
-    let displayoption1 = createButton("this.option1");
-    displayoption1.position(20, 500);
+    displayoption1 = createButton(this.option1);
+    displayoption1.position(20, 350);
     displayoption1.size(400, 75 );
     displayoption1.style("background-color", "royalblue");
     displayoption1.style("font-size", '25px');
     displayoption1.style("border-radius", '20px');
     displayoption1.style("color", "white");
+    displayoption1.mousePressed(this.displayAnswer);
     noStroke();
 
     //option 2 button
-    let displayoption2 = createButton("this.option2");
-    displayoption2.position(20, 500);
+    displayoption2 = createButton(this.option2);
+    displayoption2.position(20, 450);
     displayoption2.size(400, 75 );
     displayoption2.style("background-color", "royalblue");
     displayoption2.style("font-size", '25px');
     displayoption2.style("border-radius", '20px');
     displayoption2.style("color", "white");
+    displayoption2.mousePressed(this.displayAnswer);
     noStroke();
 
     //option 3 button
-    let displayoption3 = createButton("this.option3");
-    displayoption3.position(20, 500);
+    displayoption3 = createButton(this.option3);
+    displayoption3.position(20, 550);
     displayoption3.size(400, 75 );
     displayoption3.style("background-color", "royalblue");
     displayoption3.style("font-size", '25px');
     displayoption3.style("border-radius", '20px');
     displayoption3.style("color", "white");
+    displayoption3.mousePressed(this.displayAnswer);
     noStroke();
 
     //option 4 button
-    let displayoption4 = createButton("this.option4");
-    displayoption4.position(20, 500);
+    displayoption4 = createButton(this.option4);
+    displayoption4.position(20, 650);
     displayoption4.size(400, 75 );
     displayoption4.style("background-color", "royalblue");
     displayoption4.style("font-size", '25px');
     displayoption4.style("border-radius", '20px');
     displayoption4.style("color", "white");
+    displayoption4.mousePressed(this.displayAnswer);
     noStroke();
 
   }
-  displayAnswer(){
-    if(this.rightAnswer === option1){
-      
 
+  displayAnswer(){  
+    // checking if option 1 is correct
+    if (displayoption1.mousePressed(this.displayAnswer)){ 
+      this.usersAnswer = this.option1;
+      displayoption1.style("background-color", "green");
+      displayoption2.style("background-color", "red");
+      displayoption3.style("background-color", "red");
+      displayoption4.style("background-color", "red");
     }
-
+    // checking if option 2 is correct
+    else if(displayoption2.mousePressed(this.displayAnswer)) {
+      this.usersAnswer = this.option2;
+      displayoption1.style("background-color", "red");
+      displayoption2.style("background-color", "green");
+      displayoption3.style("background-color", "red");
+      displayoption4.style("background-color", "red");
+    }
+    // checking if option 3 is correct
+    else if(displayoption3.mousePressed(this.displayAnswer)){
+      this.usersAnswer = this.option3;
+      displayoption1.style("background-color", "rd");
+      displayoption2.style("background-color", "red");
+      displayoption3.style("background-color", "green");
+      displayoption4.style("background-color", "red");
+    }
+    //checking if option 4 is correct
+    else if(displayoption4.mousePressed(this.displayAnswer)){
+      this.usersAnswer = this.option4;
+      displayoption1.style("background-color", "red");
+      displayoption2.style("background-color", "red");
+      displayoption3.style("background-color", "red");
+      displayoption4.style("background-color", "green");
+    }
+    // else {
+    //   this.rightAnswer.style("background-color", "red");
+    // }
   }
+  
+  
 }
 
 
