@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a trivia game, similar to kahoot but different. You get asked questions and you choose the answer you feel is right. Your score is recorded and there is a highscore. The longer you wait to answer the lower your score is per question. You also get rewards or medals for your achievements
+This is a trivia game, similar to kahoot but different. You get asked questions and you choose the answer you feel is right. Your score is recorded and there is a highscore. You also get rewards or medals for your achievements
 ## Need to have list
 
 - questions with options 
