@@ -6,12 +6,14 @@
 // - describe what you did to take this project "above and beyond"
 
 
+
 //buttons on the homePage
 let button1;
 let button2;
 let button3;
 let nextbutton;
 let q = 0;
+let q2 = 0;
 
 let page = 0;
 //global variable for displaying the options in each question in class Quizquestions
@@ -22,6 +24,7 @@ let displayoption4;
 
 // variable to display new questions
 let Quiz1question1;
+let Quiz2question1;
 
 
 function setup() {
@@ -44,6 +47,7 @@ function homePage(){
     textSize (300);
     textAlign(CENTER);
     button1.mousePressed(quiz1);
+    button2.mousePressed(quiz2);
   
   }
 }
@@ -61,7 +65,7 @@ function homeButtons(){
    
 
   // button 2
-  button2 = createButton(" True/False");
+  button2 = createButton("Sport");
   button2.position(700, windowHeight-200);
   button2.size(250, 75 );
   button2.style('background-color', "white");
@@ -84,6 +88,10 @@ function homeButtons(){
 function nextquestion(){
   q+=1;
   quiz1();
+}
+function nextquestion2(){
+  q2+=1;
+  quiz2();
 }
 
 function quiz1(){
@@ -166,13 +174,90 @@ function quiz1(){
     if(q === 10){
       background("lavender");
       fill("black");
-      textSize(100);
-      text("Answers Correct: ", 500, 60);
-      text("Answers Wrong: ", 500, 150);
+      textSize(60);
+      text("Answers Correct: ", 500, 100);
+      text("Answers Wrong: ", 500, 260);
     }
   }
 }
 
+
+function quiz2(){
+  page = 2;
+  if(page === 2){
+    removeElements(); 
+    setup();
+    background("lavender");
+    nextbutton = createButton("Next");
+    nextbutton.position(950,700);
+    nextbutton.size(150, 70);
+    nextbutton.style("background-color", "orange");
+    nextbutton.style("font-size", '25px');
+    nextbutton.style("border-radius", '20px');
+    nextbutton.style("color", "white");
+    nextbutton.mousePressed(nextquestion2);
+    noStroke();
+
+    // creating a new questions from the template in class Quizquestions and giving it attributes
+    if(q2 === 0){
+      Quiz2question1 = new Quizquestions("What is Usain Bolt's 100m word record time?" , "9.22 seconds" , "9.77 seconds" , "9.58 seconds", "10 seconds" , "9.58 seconds");
+      Quiz2question1.displayQuestions();
+      Quiz2question1.displayOptions();
+    }
+    if(q2 === 1){
+      Quiz2question1 = new Quizquestions("A penalty in football is taken how many yards away from the goal?" , "12 yards" , "20 yards" , "14 yards", "9 yards" , "12 yards");
+      Quiz2question1.displayQuestions();
+      Quiz2question1.displayOptions();
+    }
+    if(q2 === 2){
+      Quiz2question1 = new Quizquestions("Who has scored the most Premier League hat-tricks?" , "Sergio Aguero" , "Lionel Messi" , "Harry Kane", "Cristiano Ronaldo" , "Sergio Aguero");
+      Quiz2question1.displayQuestions();
+      Quiz2question1.displayOptions();
+    }
+    if(q2 === 3){
+      Quiz2question1 = new Quizquestions("How many F1 championships has Lewis Hamilton won?" , "Four" , "Ten" , "Seven", "Six" , "Six");
+      Quiz2question1.displayQuestions();
+      Quiz2question1.displayOptions();
+    }
+    if(q2 === 4){
+      Quiz2question1 = new Quizquestions("How many Rings are in the Olympic rings ?" , "6 rings" , "7 rings" , "5 rings", "4 rings" , "5 rings");
+      Quiz2question1.displayQuestions();
+      Quiz2question1.displayOptions();
+    }
+    if(q2 === 5){
+      Quiz2question1 = new Quizquestions("In bowling, what is the term given for three consecutive strikes?" , "A turkey" , "A strike" , "A spare", "A foul" , "A turkey");
+      Quiz2question1.displayQuestions();
+      Quiz2question1.displayOptions();
+    }
+    if(q2 === 6){
+      Quiz2question1 = new Quizquestions("Who has won more Grand Slams?" , "Serena Williams" , "Novak Djockovic" , "Roger Federer", "Maria Sharapova" , "Serena Williams");
+      Quiz2question1.displayQuestions();
+      Quiz2question1.displayOptions();
+    }
+    if(q2 === 7){
+      Quiz2question1 = new Quizquestions("To start a regular game of curling you need how many players altogether \n (Remember, there are two teams per game)?" , "Eight" , "Four" , "Ten", "Six" , "Eight");
+      Quiz2question1.displayQuestions();
+      Quiz2question1.displayOptions();
+    }
+    if(q2 === 8){
+      Quiz2question1 = new Quizquestions("In the NBA, who is known by the nickname of 'The mailman'?" , "Stephen Curry" , "Tony Parker" , "Dirk Nowitzki", "Karl Malone" , "Karl Malone");
+      Quiz2question1.displayQuestions();
+      Quiz2question1.displayOptions();
+    }
+    if(q2 === 9){
+      Quiz2question1 = new Quizquestions("A standard game of Table Tennis ends when one player scores \n how many points?" , "Eight points" , "Twelve points" , "Eleven points", "Thirteen points" , "Eleven points");
+      Quiz2question1.displayQuestions();
+      Quiz2question1.displayOptions();
+    }
+    if(q2 === 10){
+      background("lavender");
+      fill("black");
+      textSize(60);
+      text("Answers Correct: ", 500, 100);
+      text("Answers Wrong: ", 500, 260);
+    }
+  }
+}
 
 class Quizquestions{
   constructor(question,option1,option2,option3,option4,rightAnswer){
@@ -185,20 +270,61 @@ class Quizquestions{
     this.usersAnswer = "none";
   }
 
+  ans1(){
+    if(this.option1 === this.rightAnswer){
+      displayoption1.style("background-color", "green");
+      console.log(this.option1);
+    }
+    else{
+      displayoption1.style("background-color", "red");
+      console.log("wrong");
+    }
+  }
+  
+  ans2(){
+    if(this.option2 === this.rightAnswer){
+      displayoption2.style("background-color", "green");
+      
+    }
+    else{
+      displayoption2.style("background-color", "red");
+    }
+  }
+
+  ans3(){
+    if(this.option3 === this.rightAnswer){
+      displayoption3.style("background-color", "green");
+    }
+    else{
+      displayoption3.style("background-color", "red");
+    }
+  }
+
+  ans4(){
+    if(this.option4 === this.rightAnswer){
+      displayoption4.style("background-color", "green");
+    }
+    else{
+      displayoption4.style("background-color", "red");
+    }
+  }
+
+
   displayQuestions(){
+    textFont("Verdana");
     fill("tan");
     rect(20,20,windowWidth - 20, 280);
     fill("black");
-    textSize (50);
+    textSize(40);
     //textAlign(CENTER);
-    text(this.question , 900, 150);
-    textFont("Verdana");
+    text(this.question , 800, 150);
+    
   }
 
   displayOptions(){
     //option 1 button
     displayoption1 = createButton(this.option1);
-    displayoption1.position(350, 400);
+    displayoption1.position(300, 400);
     displayoption1.size(400, 75 );
     displayoption1.style("background-color", "royalblue");
     displayoption1.style("font-size", "25px");
@@ -220,13 +346,13 @@ class Quizquestions{
 
     //option 3 button
     displayoption3 = createButton(this.option3);
-    displayoption3.position(350, 550);
+    displayoption3.position(300, 550);
     displayoption3.size(400, 75 );
     displayoption3.style("background-color", "royalblue");
     displayoption3.style("font-size", "25px");
     displayoption3.style("border-radius", "20px");
     displayoption3.style("color", "white");
-    displayoption3.mousePressed(this.ans3);
+    displayoption2.mousePressed(this.ans3);
     noStroke();
 
     //option 4 button
@@ -237,51 +363,8 @@ class Quizquestions{
     displayoption4.style("font-size", "25px");
     displayoption4.style("border-radius", "20px");
     displayoption4.style("color", "white");
-    displayoption4.mousePressed(this.ans4); 
+    displayoption2.mousePressed(this.ans4); 
     noStroke();
 
-  }
-
-  ans1(){
-    console.log(this.option1);
-    this.usersAnswer = this.option1;
-    console.log(this.usersAnswer);
-    if(this.usersAnswer === this.rightAnswer){
-      displayoption1.style("background-color", "green");
-    }
-    else{
-      displayoption1.style("background-color", "red");
-    }
-  }
-  
-  ans2(){
-    this.usersAnswer = this.option2;
-    if(this.usersAnswer === this.rightAnswer){
-      displayoption2.style("background-color", "green");
-      
-    }
-    else{
-      displayoption2.style("background-color", "red");
-    }
-  }
-
-  ans3(){
-    this.usersAnswer = this.option3;
-    if(this.usersAnswer === this.rightAnswer){
-      displayoption3.style("background-color", "green");
-    }
-    else{
-      displayoption3.style("background-color", "red");
-    }
-  }
-
-  ans4(){
-    this.usersAnswer = this.option4;
-    if(this.usersAnswer === this.rightAnswer){
-      displayoption4.style("background-color", "green");
-    }
-    else{
-      displayoption4.style("background-color", "red");
-    }
   }
 }
