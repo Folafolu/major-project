@@ -16,3 +16,6 @@ This is a trivia game. You get asked questions and you choose the answer you fee
 - Great UI
 - random code generator to enter into the quiz
 - Randomizes the question
+
+## Some difficult problem
+- It was difficult to differentiate the right and the wrong answer in a class until I had to add an object from the constructor into my button functions because before then it was not an element in the button function. 
