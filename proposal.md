@@ -6,7 +6,7 @@ This is a trivia game. You get asked questions and you choose the answer you fee
 ## Need to have list
 
 - questions with options 
-- score or reward system
+- score 
 - different question and categories
 - Using class to hold questions attributes
 
