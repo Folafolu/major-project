@@ -14,11 +14,11 @@ let button2;
 let button3;
 let nextbutton;
 
-//quiz1
+//quiz1 qustion numbers. It goes from 0 - 9 (10 questions in total)
 let q = 0;
-//quiz2
+//quiz2 qustion numbers. It goes from 0 - 9 (10 questions in total)
 let q2 = 0;
-//quiz3
+//quiz3 qustion numbers. It goes from 0 - 9 (10 questions in total)
 let q3 = 0;
 
 //global variable for displaying the options in each question in class Quizquestions
@@ -31,17 +31,22 @@ let displayoption4;
 let answersCorrect = 0;
 let answersWrong = 0;
 
+// the Click variable is to prevent the user from clicking two options per question and is toggled between true and false
+let Click = true;
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
 
-function draw() {
+function draw(){
   homePage();
 }
 
 // all the attributes in the home page
 function homePage(){
   if(page === 0){
+    removeElements();
     background("white");
     homeButtons();
     fill("black");
@@ -100,18 +105,31 @@ function homeButtons(){
 }
 // moves to next question in quiz 1
 function nextquestion(){
-  q+=1;
-  quiz1();
+  if(Click !== true){
+    q +=1;
+    quiz1();
+    Click = true;
+  }
+
 }
 // moves to next question in quiz 2
 function nextquestion2(){
-  q2+=1;
-  quiz2();
+  if (Click !== true){
+    q2+=1;
+    quiz2();
+    Click = true;
+  }
+  
+ 
 }
 // moves to next question in quiz 3
 function nextquestion3(){
-  q3+=1;
-  quiz3();
+  if(Click !== true){
+    q3+=1;
+    quiz3();
+    Click = true;
+  }
+
 }
 
 // Quiz1 holds all the quiz 1 questions and answers 
@@ -133,7 +151,7 @@ function quiz1(){
 
 
     // creating a new questions from the template in class Quizquestions and giving it attributes
-    if(q === 0){
+    if( q === 0){
       let Quiz1question = new Quizquestions("In which galaxy is the Earth located?" , "Pinwheel" , "Markarian" , "Milky Way", "Andromeda" , "c");
       Quiz1question.displayQuestions();
       Quiz1question.displayOptions();
@@ -209,6 +227,7 @@ function quiz1(){
       ellipse(1500, 20, 200, 400);
       fill("#e2d1b4");
       ellipse(300, 900, 366, 577);
+      home();
     }
   }
 }
@@ -298,6 +317,7 @@ function quiz2(){
       ellipse(1500, 20, 200, 400);
       fill("#e2d1b4");
       ellipse(300, 900, 366, 577);
+      home();
     }
   }
 }
@@ -387,6 +407,7 @@ function quiz3(){
       ellipse(1500, 20, 200, 400);
       fill("#e2d1b4");
       ellipse(300, 900, 366, 577);
+      home();
     }
   }
 }
@@ -466,103 +487,137 @@ class Quizquestions{
 
   // checking if option 1 is correct or wrong
   ans1(){
-    console.log(this);
-    if( "a" === this.rightAnswer){
-      displayoption1.style("background-color", "green");
-      displayoption2.style("background-color", "red");
-      displayoption3.style("background-color", "red");
-      displayoption4.style("background-color", "red");
-      answersCorrect++;
+    if(Click === true){
+      console.log(this);
+      if( "a" === this.rightAnswer){
+        displayoption1.style("background-color", "green");
+        displayoption2.style("background-color", "red");
+        displayoption3.style("background-color", "red");
+        displayoption4.style("background-color", "red");
+        answersCorrect++;
+       
+      }
+      else{
+        displayoption1.style("background-color", "red");
+        answersWrong++;
+        if("b" === this.rightAnswer){
+          displayoption2.style("background-color", "green");
+        }
+        else if("c" === this.rightAnswer){
+          displayoption3.style("background-color", "green");
+        }
+        else if("d" === this.rightAnswer){
+          displayoption4.style("background-color", "green");
+        }
+      }
     }
-    else{
-      displayoption1.style("background-color", "red");
-      answersWrong++;
-      if("b" === this.rightAnswer){
-        displayoption2.style("background-color", "green");
-      }
-      else if("c" === this.rightAnswer){
-        displayoption3.style("background-color", "green");
-      }
-      else if("d" === this.rightAnswer){
-        displayoption4.style("background-color", "green");
-      }
-    }
+    Click = false;
+    
   }
   
   // checking if option 2 is correct or wrong
   ans2(){
-    if("b" === this.rightAnswer){
-      displayoption2.style("background-color", "green");
-      displayoption1.style("background-color", "red");
-      displayoption3.style("background-color", "red");
-      displayoption4.style("background-color", "red");
-      answersCorrect++;
-    }
-    else {
-      displayoption2.style("background-color", "red");
-      answersWrong++;
-      if("a" === this.rightAnswer){
-        displayoption1.style("background-color", "green");
+    if(Click === true){
+      if("b" === this.rightAnswer){
+        displayoption2.style("background-color", "green");
+        displayoption1.style("background-color", "red");
+        displayoption3.style("background-color", "red");
+        displayoption4.style("background-color", "red");
+        answersCorrect++;
+     
       }
-      else if("c" === this.rightAnswer){
-        displayoption3.style("background-color", "green");
+      else {
+        displayoption2.style("background-color", "red");
+        answersWrong++;
+        if("a" === this.rightAnswer){
+          displayoption1.style("background-color", "green");
+        }
+        else if("c" === this.rightAnswer){
+          displayoption3.style("background-color", "green");
+        }
+        else if("d" === this.rightAnswer){
+          displayoption4.style("background-color", "green");
+        }
       }
-      else if("d" === this.rightAnswer){
-        displayoption4.style("background-color", "green");
-      }
+      Click = false;
+      
     }
   }
 
   // checking if option 3 is correct or wrong
   ans3(){
-    console.log(this);
-    if( "c" === this.rightAnswer){
-      displayoption3.style("background-color", "green");
-      displayoption1.style("background-color", "red");
-      displayoption2.style("background-color", "red");
-      displayoption4.style("background-color", "red");
-      answersCorrect++;
-   
-    }
-    else{
-      displayoption3.style("background-color", "red");
-      answersWrong++;
-      if("b" === this.rightAnswer){
-        displayoption2.style("background-color", "green");
-      }
-      else if("a" === this.rightAnswer){
-        displayoption1.style("background-color", "green");
-      }
-      else if("d" === this.rightAnswer){
-        displayoption4.style("background-color", "green");
-      }
+    if(Click === true){
+      console.log(this);
+      if( "c" === this.rightAnswer){
+        displayoption3.style("background-color", "green");
+        displayoption1.style("background-color", "red");
+        displayoption2.style("background-color", "red");
+        displayoption4.style("background-color", "red");
+        answersCorrect++;
      
+      }
+      else{
+        displayoption3.style("background-color", "red");
+        answersWrong++;
+        if("b" === this.rightAnswer){
+          displayoption2.style("background-color", "green");
+        }
+        else if("a" === this.rightAnswer){
+          displayoption1.style("background-color", "green");
+        }
+        else if("d" === this.rightAnswer){
+          displayoption4.style("background-color", "green");
+        }
+       
+      }
+      Click = false;
+      
     }
+
   }
 
   // checking if option 4 is correct or wrong
   ans4(){
-    if( "d" === this.rightAnswer){
-      displayoption4.style("background-color", "green");
-      displayoption1.style("background-color", "red");
-      displayoption2.style("background-color", "red");
-      displayoption3.style("background-color", "red");
-      answersCorrect++;
-    }
-    else{
-      displayoption4.style("background-color", "red");
-      answersWrong++;
-      if("b" === this.rightAnswer){
-        displayoption2.style("background-color", "green");
+    if(Click === true){
+      if( "d" === this.rightAnswer){
+        displayoption4.style("background-color", "green");
+        displayoption1.style("background-color", "red");
+        displayoption2.style("background-color", "red");
+        displayoption3.style("background-color", "red");
+        answersCorrect++;
+        
       }
-      else if("c" === this.rightAnswer){
-        displayoption3.style("background-color", "green");
+      else{
+        displayoption4.style("background-color", "red");
+        answersWrong++;
+        if("b" === this.rightAnswer){
+          displayoption2.style("background-color", "green");
+        }
+        else if("c" === this.rightAnswer){
+          displayoption3.style("background-color", "green");
+        }
+        else if("a" === this.rightAnswer){
+          displayoption1.style("background-color", "green");
+        }
       }
-      else if("a" === this.rightAnswer){
-        displayoption1.style("background-color", "green");
-      }
-    
+      Click = false;
+      
     }
   }
 
+}
+
+function home(){
+  let home = createButton("Home");
+  home.position(650, 550);
+  home.size(200, 75 );
+  home.style("background-color", "#8799c1");
+  home.style("font-size", "25px");
+  home.style("border-radius", "20px");
+  home.style("color", "white");
+  home.mousePressed(gotohome);
+
+}
+function gotohome(){
+  draw;
 }
