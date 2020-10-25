@@ -41,6 +41,7 @@ function setup() {
 
 function draw(){
   homePage();
+  
 }
 
 // all the attributes in the home page
@@ -80,6 +81,7 @@ function homeButtons(){
   button1.style('border-radius', '20px');
   button1.style('color', "black");
   noStroke();
+  //button1.mousePressed(quiz1);
    
 
   // button 2
@@ -91,6 +93,8 @@ function homeButtons(){
   button2.style('border-radius', '20px');
   button2.style("color", "black");
   noStroke();
+  //button2.mousePressed(quiz2);
+
 
   // button 3
   button3 = createButton("Animals");
@@ -101,12 +105,13 @@ function homeButtons(){
   button3.style("border-radius", '20px');
   button3.style("color", "black");
   noStroke();
+  //button3.mousePressed(quiz3);
   
 }
 // moves to next question in quiz 1
 function nextquestion(){
   if(Click !== true){
-    q +=1;
+   q+=1;
     quiz1();
     Click = true;
   }
@@ -134,7 +139,7 @@ function nextquestion3(){
 
 // Quiz1 holds all the quiz 1 questions and answers 
 function quiz1(){
-  page = 1;
+  page =1;
   if(page === 1){
     removeElements(); 
     setup();
@@ -234,7 +239,7 @@ function quiz1(){
 
 // Quiz2 holds all the quiz 2 questions and answers 
 function quiz2(){
-  page = 2;
+  page =2;
   if(page === 2){
     removeElements(); 
     setup();
@@ -619,5 +624,11 @@ function home(){
 
 }
 function gotohome(){
-  draw;
+  console.log("home");
+  q = 0;
+  q2 = 0;
+  q3 = 0;
+  answersCorrect = 0;
+  answersWrong = 0;
+  page = 0;
 }
