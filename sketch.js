@@ -52,11 +52,16 @@ function homePage(){
     homeButtons();
     fill("black");
     textSize (50);
-    text('c h a l l e n g e',windowWidth/2 -50,windowHeight/2 -40);
+    text('c h a l l e n g e',windowWidth/2 -50,windowHeight/2 -90);
     textSize (200);
     textFont('open sans');
-    text('Trivia',windowWidth/2 -50,windowHeight/2 - 100);
+    text('Trivia',windowWidth/2 -50,windowHeight/2 - 150);
     textAlign(CENTER);
+    fill("purple");
+    textSize (50);
+    textFont('open sans');
+    text('What would you like to play!',windowWidth/2 -50,windowHeight/2 + 100);
+
     button1.mousePressed(quiz1);
     button2.mousePressed(quiz2);
     button3.mousePressed(quiz3);
@@ -85,7 +90,7 @@ function homeButtons(){
    
 
   // button 2
-  button2 = createButton("Sport");
+  button2 = createButton("Sports");
   button2.position(700, windowHeight-200);
   button2.size(250, 75 );
   button2.style('background-color', "#697799");
@@ -224,6 +229,10 @@ function quiz1(){
       text("Answers Wrong: ", 700, 500);
       text(answersWrong, 1000, 500);
       text(answersCorrect, 1000, 400);
+      fill("purple");
+      textSize(100);
+      text("Nice Job!!! ", 800, 150);
+
       fill("#8799c1");
       ellipse(1500, 699, 500, 900);
       fill("#8799c1");
@@ -314,6 +323,10 @@ function quiz2(){
       text("Answers Wrong: ", 700, 500);
       text(answersWrong, 1000, 500);
       text(answersCorrect, 1000, 400);
+      fill("purple");
+      textSize(100);
+      text("Nice Job!!! ", 800, 150);
+
       fill("#8799c1");
       ellipse(1500, 699, 500, 900);
       fill("#8799c1");
@@ -404,6 +417,10 @@ function quiz3(){
       text("Answers Wrong: ", 700, 500);
       text(answersWrong, 1000, 500);
       text(answersCorrect, 1000, 400);
+      fill("purple");
+      textSize(100);
+      text("Nice Job!!! ", 800, 150);
+
       fill("#8799c1");
       ellipse(1500, 699, 500, 900);
       fill("#8799c1");
