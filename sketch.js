@@ -240,8 +240,19 @@ function quiz1(){
       text(answersWrong, 1000, 500);
       text(answersCorrect, 1000, 400);
       fill("purple");
-      textSize(100);
-      text("Nice Job!!! ", 800, 150);
+      if(answersCorrect >=7 ){
+        textSize(100);
+        text("Nice Job!!! ", 800, 150);
+      }
+      else if(answersCorrect >=4 && answersCorrect <7){
+        textSize(70);
+        text("Almost There, Try harder ", 800, 150);
+      }
+      else if(answersCorrect< 4){
+        textSize(80);
+        text("Better luck next Time ", 800, 150);
+      }
+
 
       fill("#8799c1");
       ellipse(1500, 699, 500, 900);
@@ -344,8 +355,18 @@ function quiz2(){
       text(answersWrong, 1000, 500);
       text(answersCorrect, 1000, 400);
       fill("purple");
-      textSize(100);
-      text("Nice Job!!! ", 800, 150);
+      if(answersCorrect >=7 ){
+        textSize(100);
+        text("Nice Job!!! ", 800, 150);
+      }
+      else if(answersCorrect >=4 && answersCorrect <7){
+        textSize(70);
+        text("Almost There, Try harder ", 800, 150);
+      }
+      else if(answersCorrect< 4){
+        textSize(80);
+        text("Better luck next Time ", 800, 150);
+      }
 
       fill("#8799c1");
       ellipse(1500, 699, 500, 900);
@@ -448,8 +469,18 @@ function quiz3(){
       text(answersWrong, 1000, 500);
       text(answersCorrect, 1000, 400);
       fill("purple");
-      textSize(100);
-      text("Nice Job!!! ", 800, 150);
+      if(answersCorrect >=7 ){
+        textSize(100);
+        text("Nice Job!!! ", 800, 150);
+      }
+      else if(answersCorrect >=4 && answersCorrect <7){
+        textSize(70);
+        text("Almost There, Try harder ", 800, 150);
+      }
+      else if(answersCorrect< 4){
+        textSize(80);
+        text("Better luck next Time ", 800, 150);
+      }
 
       fill("#8799c1");
       ellipse(1500, 699, 500, 900);
@@ -664,6 +695,7 @@ class Quizquestions{
     textSize(30);
   }
 
+
 }
 
 function home(){
@@ -687,3 +719,4 @@ function gotohome(){
   numberOfQuestionDisplayed  =  1;
   page = 0;
 }
+
