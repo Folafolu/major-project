@@ -7,6 +7,8 @@
 
 // first sets the page to 0 which is the home page
 let page = 0;
+// displays the number of question you are on out of 10
+let numberOfQuestionDisplayed = 1;
 
 //buttons on the homePage
 let button1;
@@ -86,7 +88,6 @@ function homeButtons(){
   button1.style('border-radius', '20px');
   button1.style('color', "black");
   noStroke();
-  //button1.mousePressed(quiz1);
    
 
   // button 2
@@ -98,8 +99,6 @@ function homeButtons(){
   button2.style('border-radius', '20px');
   button2.style("color", "black");
   noStroke();
-  //button2.mousePressed(quiz2);
-
 
   // button 3
   button3 = createButton("Animals");
@@ -110,36 +109,36 @@ function homeButtons(){
   button3.style("border-radius", '20px');
   button3.style("color", "black");
   noStroke();
-  //button3.mousePressed(quiz3);
-  
 }
+
 // moves to next question in quiz 1
 function nextquestion(){
   if(Click !== true){
    q+=1;
+   numberOfQuestionDisplayed +=1;
     quiz1();
     Click = true;
   }
-
 }
+
 // moves to next question in quiz 2
 function nextquestion2(){
   if (Click !== true){
     q2+=1;
+    numberOfQuestionDisplayed +=1;
     quiz2();
     Click = true;
   }
-  
- 
 }
+
 // moves to next question in quiz 3
 function nextquestion3(){
   if(Click !== true){
     q3+=1;
+    numberOfQuestionDisplayed +=1;
     quiz3();
     Click = true;
   }
-
 }
 
 // Quiz1 holds all the quiz 1 questions and answers 
@@ -165,59 +164,70 @@ function quiz1(){
       let Quiz1question = new Quizquestions("In which galaxy is the Earth located?" , "Pinwheel" , "Markarian" , "Milky Way", "Andromeda" , "c");
       Quiz1question.displayQuestions();
       Quiz1question.displayOptions();
+      Quiz1question.displaynumberOfQuestionsDisplayed();
+      
     }
 
     if(q === 1){
       let Quiz1question = new Quizquestions("This shoe company produced the Air Jordan shoes: " , "Puma" , "Reebok" , "Nike", "Adidas" , "c");
       Quiz1question.displayQuestions();
       Quiz1question.displayOptions();
+      Quiz1question.displaynumberOfQuestionsDisplayed();
     }
     if(q === 2){
       let Quiz1question = new Quizquestions("What is Australia's largest city?" , "Newcastle" , "Sydney" , "Canberra", "Perth" , "b");
       Quiz1question.displayQuestions();
       Quiz1question.displayOptions(); 
+      Quiz1question.displaynumberOfQuestionsDisplayed();
     }
 
     if(q === 3){
       let Quiz1question = new Quizquestions("What is the largest country in South America?" , "Brazil" , "Argentina" , "Peru", "Columbia" , "a");
       Quiz1question.displayQuestions();
       Quiz1question.displayOptions();
+      Quiz1question.displaynumberOfQuestionsDisplayed();
     }
       
     if(q === 4){
       let Quiz1question = new Quizquestions("The musical Mamma Mia! is based on this band: " , "Beatles" , "ABBA" , "The Rolling Stones", "Nirvana" , "b");
       Quiz1question.displayQuestions();
       Quiz1question.displayOptions();
+      Quiz1question.displaynumberOfQuestionsDisplayed();
     }
 
     if(q === 5){
       let Quiz1question = new Quizquestions("In which sport did Muhammad Ali compete?" , "Basketball" , "Boxing" , "Tennis", "Volleyball" , "b");
       Quiz1question.displayQuestions();
       Quiz1question.displayOptions();
+      Quiz1question.displaynumberOfQuestionsDisplayed();
     }
 
     if(q === 6){
       let Quiz1question = new Quizquestions("What year did the Semptember 11 (9-11) attacks take place?" , "2001" , "2005" , "1999", "2003" , "a");
       Quiz1question.displayQuestions();
       Quiz1question.displayOptions();
+      Quiz1question.displaynumberOfQuestionsDisplayed();
     }
 
     if(q === 7){
       let Quiz1question = new Quizquestions("Hepatitis affects which part of the human body?" , "Brain" , "Lungs" , "Liver", "Back" , "c");
       Quiz1question.displayQuestions();
       Quiz1question.displayOptions();
+      Quiz1question.displaynumberOfQuestionsDisplayed();
     }
 
     if(q === 8){
       let Quiz1question = new Quizquestions("Liberty, Equality, Fraternity is the national motto of: " , "China" , "Germany" , "United States", "France" , "d");
       Quiz1question.displayQuestions();
       Quiz1question.displayOptions();
+      Quiz1question.displaynumberOfQuestionsDisplayed();
     }
 
     if(q === 9){
       let Quiz1question = new Quizquestions("What type of maple leaf is in the centre of the Canadian flag?" , "A mountain maple leaf" , "A silver maple leaf" , "A sugar maple leaf", "A stylized maple leaf" , "d");
       Quiz1question.displayQuestions();
       Quiz1question.displayOptions();
+      Quiz1question.displaynumberOfQuestionsDisplayed();
     
     }
     if(q === 10){
@@ -268,51 +278,61 @@ function quiz2(){
       let Quiz2question = new Quizquestions("What is Usain Bolt's 100m word record time?" , "9.22 seconds" , "9.77 seconds" , "9.58 seconds", "10 seconds" , "c");
       Quiz2question.displayQuestions();
       Quiz2question.displayOptions();
+      Quiz2question.displaynumberOfQuestionsDisplayed();
     }
     if(q2 === 1){
       let Quiz2question = new Quizquestions("A penalty in football is taken how many yards away from the goal?" , "12 yards" , "20 yards" , "14 yards", "9 yards" , "a");
       Quiz2question.displayQuestions();
       Quiz2question.displayOptions();
+      Quiz2question.displaynumberOfQuestionsDisplayed();
     }
     if(q2 === 2){
       let Quiz2question = new Quizquestions("Who has scored the most Premier League hat-tricks?" , "Sergio Aguero" , "Lionel Messi" , "Harry Kane", "Cristiano Ronaldo" , "a");
       Quiz2question.displayQuestions();
       Quiz2question.displayOptions();
+      Quiz2question.displaynumberOfQuestionsDisplayed();
     }
     if(q2 === 3){
       let Quiz2question = new Quizquestions("How many F1 championships has Lewis Hamilton won?" , "Four" , "Ten" , "Seven", "Six" , "d");
       Quiz2question.displayQuestions();
       Quiz2question.displayOptions();
+      Quiz2question.displaynumberOfQuestionsDisplayed();
     }
     if(q2 === 4){
       let Quiz2question = new Quizquestions("How many Rings are in the Olympic rings ?" , "6 rings" , "7 rings" , "5 rings", "4 rings" , "c");
       Quiz2question.displayQuestions();
       Quiz2question.displayOptions();
+      Quiz2question.displaynumberOfQuestionsDisplayed();
     }
     if(q2 === 5){
       let Quiz2question = new Quizquestions("In bowling, what is the term given for three consecutive strikes?" , "A turkey" , "A strike" , "A spare", "A foul" , "a");
       Quiz2question.displayQuestions();
       Quiz2question.displayOptions();
+      Quiz2question.displaynumberOfQuestionsDisplayed();
     }
     if(q2 === 6){
       let Quiz2question = new Quizquestions("Who has won more Grand Slams?" , "Serena Williams" , "Novak Djockovic" , "Roger Federer", "Maria Sharapova" , "a");
       Quiz2question.displayQuestions();
       Quiz2question.displayOptions();
+      Quiz2question.displaynumberOfQuestionsDisplayed();
     }
     if(q2 === 7){
       let Quiz2question = new Quizquestions("To start a regular game of curling you need how many players altogether \n (Remember, there are two teams per game)?" , "Eight" , "Four" , "Ten", "Six" , "a");
       Quiz2question.displayQuestions();
       Quiz2question.displayOptions();
+      Quiz2question.displaynumberOfQuestionsDisplayed();
     }
     if(q2 === 8){
       let Quiz2question = new Quizquestions("In the NBA, who is known by the nickname of 'The mailman'?" , "Stephen Curry" , "Tony Parker" , "Dirk Nowitzki", "Karl Malone" , "d");
       Quiz2question.displayQuestions();
       Quiz2question.displayOptions();
+      Quiz2question.displaynumberOfQuestionsDisplayed();
     }
     if(q2 === 9){
       let Quiz2question = new Quizquestions("A standard game of Table Tennis ends when one player scores \n how many points?" , "Eight points" , "Twelve points" , "Eleven points", "Thirteen points" , "c");
       Quiz2question.displayQuestions();
       Quiz2question.displayOptions();
+      Quiz2question.displaynumberOfQuestionsDisplayed();
     }
     if(q2 === 10){
       removeElements();
@@ -362,51 +382,61 @@ function quiz3(){
       let Quiz3question = new Quizquestions("What animal has the longest lifespan?" , "Elephant" , "Giant Tortoise" , "Blue Whale", "Locust" , "b");
       Quiz3question.displayQuestions();
       Quiz3question.displayOptions();
+      Quiz3question.displaynumberOfQuestionsDisplayed();
     }
     if(q3 === 1){
       let Quiz3question = new Quizquestions("What is the only mammal capable of true flight?" , "Flying Squirrel" , "Ostrich" , "HummingBird", "Bat" , "d");
       Quiz3question.displayQuestions();
       Quiz3question.displayOptions();
+      Quiz3question.displaynumberOfQuestionsDisplayed();
     }
     if(q3 === 2){
       let Quiz3question = new Quizquestions("What is the fastest flying bird in the world?" , "Harpy Eagle" , "Peregrine Falcon" , "Horned Sungem", "Spine-Tailed Swift" , "b");
       Quiz3question.displayQuestions();
       Quiz3question.displayOptions();
+      Quiz3question.displaynumberOfQuestionsDisplayed();
     }
     if(q3 === 3){
       let Quiz3question = new Quizquestions("A newborn kangaroo is about the size of a ..." , "Watermelon" , "Plum" , "Grapefruit", "Lima Bean" , "d");
       Quiz3question.displayQuestions();
       Quiz3question.displayOptions();
+      Quiz3question.displaynumberOfQuestionsDisplayed();
     }
     if(q3 === 4){
       let Quiz3question = new Quizquestions("What is the gestation period of a Blue Whale?" , "10-12 months" , "2 years" , "4-6 months", "16-18 months" , "a");
       Quiz3question.displayQuestions();
       Quiz3question.displayOptions();
+      Quiz3question.displaynumberOfQuestionsDisplayed();
     }
     if(q3 === 5){
       let Quiz3question = new Quizquestions("What is the smallest mammal in the world?" , "Numbat" , "Bumblebee Bat" , "Pygmy Marmoset", "Western Harvest Mouse" , "b");
       Quiz3question.displayQuestions();
       Quiz3question.displayOptions();
+      Quiz3question.displaynumberOfQuestionsDisplayed();
     }
     if(q3 === 6){
       let Quiz3question = new Quizquestions("How far away can a wolf smell its prey?" , "Nearly 1 Mile" , "Nearly Half A Mile" , "Nearly 4 Miles", "Nearly 2 Miles" , "d");
       Quiz3question.displayQuestions();
       Quiz3question.displayOptions();
+      Quiz3question.displaynumberOfQuestionsDisplayed();
     }
     if(q3 === 7){
       let Quiz3question = new Quizquestions("What is the world's most poisonous spider?" , "Sydney Funnel Spider" , "Daddy-Longlegs" , "Brown Recluse", "Brazilian Wandering Spider" , "d");
       Quiz3question.displayQuestions();
       Quiz3question.displayOptions();
+      Quiz3question.displaynumberOfQuestionsDisplayed();
     }
     if(q3 === 8){
       let Quiz3question = new Quizquestions("How many times can a hummingBird flap its wings per second?" , "20" , "40" , "80", "160" , "c");
       Quiz3question.displayQuestions();
       Quiz3question.displayOptions();
+      Quiz3question.displaynumberOfQuestionsDisplayed();
     }
     if(q3 === 9){
       let Quiz3question = new Quizquestions("What animal has the highest blood pressure?" , "Elephant" , "Flea" , "Giraffe", "Blue Whale" , "c");
       Quiz3question.displayQuestions();
       Quiz3question.displayOptions();
+      Quiz3question.displaynumberOfQuestionsDisplayed();
     }
     if(q3 === 10){
       removeElements();
@@ -443,6 +473,7 @@ class Quizquestions{
     this.option3 = option3;
     this.option4 = option4;
     this.rightAnswer = rightAnswer;
+    
   }
 
 
@@ -627,6 +658,12 @@ class Quizquestions{
     }
   }
 
+  displaynumberOfQuestionsDisplayed(){
+    fill("purple");
+    text("Question "+ numberOfQuestionDisplayed + "/10" , 800, 350);
+    textSize(30);
+  }
+
 }
 
 function home(){
@@ -647,5 +684,6 @@ function gotohome(){
   q3 = 0;
   answersCorrect = 0;
   answersWrong = 0;
+  numberOfQuestionDisplayed  =  1;
   page = 0;
 }
