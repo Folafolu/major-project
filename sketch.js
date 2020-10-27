@@ -10,11 +10,6 @@ let page = 0;
 // displays the number of question you are on out of 10
 let numberOfQuestionDisplayed = 1;
 
-// let backgroundSound;
-// function preload() {
-//   // soundFormats('mp3', 'ogg');
-//   backgroundSound = loadSound('assets/creativeminds.mp3');
-// }
 
 //buttons on the homePage
 let button1;
@@ -45,8 +40,7 @@ let Click = true;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  // backgroundSound.play();
-  // backgroundSound.loop();
+  
 }
 
 function draw(){
