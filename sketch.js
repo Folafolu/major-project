@@ -1,8 +1,8 @@
 // Trivia Challenge
 // Fola Idris
-// Date
+// Oct 27, 2020
 // Extra for Experts:
-// - describe what you did to take this project "above and beyond"
+// - I used a class function to hold all the attributes of each question
 
 
 // first sets the page to 0 which is the home page
@@ -12,7 +12,7 @@ let numberOfQuestionDisplayed = 1;
 
 // let backgroundSound;
 // function preload() {
-//   //soundFormats('mp3', 'ogg');
+//   // soundFormats('mp3', 'ogg');
 //   backgroundSound = loadSound('assets/creativeminds.mp3');
 // }
 
@@ -62,15 +62,15 @@ function homePage(){
     homeButtons();
     fill("black");
     textSize (50);
-    text('c h a l l e n g e',windowWidth/2 -50,windowHeight/2 -90);
+    text("c h a l l e n g e",windowWidth/2 -50,windowHeight/2 -90);
     textSize (200);
-    textFont('open sans');
-    text('Trivia',windowWidth/2 -50,windowHeight/2 - 150);
+    textFont("open sans");
+    text("Trivia",windowWidth/2 -50,windowHeight/2 - 150);
     textAlign(CENTER);
     fill("purple");
     textSize (50);
-    textFont('open sans');
-    text('What would you like to play!',windowWidth/2 -50,windowHeight/2 + 100);
+    textFont("open sans");
+    text("What would you like to play!",windowWidth/2 -50,windowHeight/2 + 100);
 
     button1.mousePressed(quiz1);
     button2.mousePressed(quiz2);
@@ -91,10 +91,10 @@ function homeButtons(){
   button1 = createButton("General Knowledge");
   button1.position(250, windowHeight - 200);
   button1.size(250, 75 );
-  button1.style('background-color', "#697799");
-  button1.style('font-size', '25px');
-  button1.style('border-radius', '20px');
-  button1.style('color', "black");
+  button1.style("background-color", "#697799");
+  button1.style("font-size", "25px");
+  button1.style("border-radius", "20px");
+  button1.style("color", "black");
   noStroke();
    
 
@@ -102,9 +102,9 @@ function homeButtons(){
   button2 = createButton("Sports");
   button2.position(700, windowHeight-200);
   button2.size(250, 75 );
-  button2.style('background-color', "#697799");
-  button2.style('font-size', '25px');
-  button2.style('border-radius', '20px');
+  button2.style("background-color", "#697799");
+  button2.style("font-size", "25px");
+  button2.style("border-radius", "20px");
   button2.style("color", "black");
   noStroke();
 
@@ -113,8 +113,8 @@ function homeButtons(){
   button3.position(1150, windowHeight-200);
   button3.size(250, 75 );
   button3.style("background-color", "#697799");
-  button3.style("font-size", '25px');
-  button3.style("border-radius", '20px');
+  button3.style("font-size", "25px");
+  button3.style("border-radius", "20px");
   button3.style("color", "black");
   noStroke();
 }
@@ -122,8 +122,8 @@ function homeButtons(){
 // moves to next question in quiz 1
 function nextquestion(){
   if(Click !== true){
-   q+=1;
-   numberOfQuestionDisplayed +=1;
+    q+=1;
+    numberOfQuestionDisplayed +=1;
     quiz1();
     Click = true;
   }
@@ -160,8 +160,8 @@ function quiz1(){
     nextbutton.position(950,700);
     nextbutton.size(150, 70);
     nextbutton.style("background-color", "orange");
-    nextbutton.style("font-size", '25px');
-    nextbutton.style("border-radius", '20px');
+    nextbutton.style("font-size", "25px");
+    nextbutton.style("border-radius", "20px");
     nextbutton.style("color", "white");
     nextbutton.mousePressed(nextquestion);
     noStroke();
@@ -286,8 +286,8 @@ function quiz2(){
     nextbutton.position(950,700);
     nextbutton.size(150, 70);
     nextbutton.style("background-color", "orange");
-    nextbutton.style("font-size", '25px');
-    nextbutton.style("border-radius", '20px');
+    nextbutton.style("font-size", "25px");
+    nextbutton.style("border-radius", "20px");
     nextbutton.style("color", "white");
     nextbutton.mousePressed(nextquestion2);
     noStroke();
@@ -400,8 +400,8 @@ function quiz3(){
     nextbutton.position(950,700);
     nextbutton.size(150, 70);
     nextbutton.style("background-color", "orange");
-    nextbutton.style("font-size", '25px');
-    nextbutton.style("border-radius", '20px');
+    nextbutton.style("font-size", "25px");
+    nextbutton.style("border-radius", "20px");
     nextbutton.style("color", "white");
     nextbutton.mousePressed(nextquestion3);
     noStroke();
